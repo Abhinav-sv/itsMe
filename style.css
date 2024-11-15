@@ -1,0 +1,131 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', Arial, sans-serif; /* Clean and professional font */
+    background: linear-gradient(to right, #1a1f71, #6269ec);
+    padding: 1rem;
+}
+
+/* Card styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15); /* Slightly lighter for contrast */
+    padding: 2rem;
+    border-radius: 16px; /* Softer corners */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Text styling */
+.name {
+    font-size: 2.5rem; /* Slightly larger for prominence */
+    font-weight: 700; /* Bolder text */
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: slideIn 2s forwards;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular image for a clean look */
+    margin-bottom: 1rem;
+    animation: slideIn 2s forwards;
+}
+
+.info {
+    font-size: 1rem;
+    margin: 1rem 6em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+    color: #f0f0f0;
+    text-align: left; /* Aligns text for better readability */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icons and text */
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
+/* Button styling */
+.reveal-btn {
+    background-color: #4e54c8;
+    border: none;
+    padding: 0.7rem 2rem;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+.reveal-btn:hover {
+    background-color: #2e3167;
+    transform: translateY(-3px); /* Adds a slight pop effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .name {
+        font-size: 1.8rem;
+    }
+    .info {
+        font-size: 0.95rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .reveal-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
